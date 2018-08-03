@@ -7,12 +7,12 @@ package com.tdk.daggerdemo
  */
 class Student private constructor(val name: String, val age: Int) {
 
-    lateinit var lesson: LessonInterface
+    lateinit var lesson: Lesson
     override fun toString(): String {
-        return "name:$name,age:$age,接口名:${lesson.getClassName()}"
+        return "name:$name,age:$age,科目:${lesson.name}，分数：${lesson.score}"
     }
 
-    constructor(name: String, age: Int, lesson: LessonInterface) : this(name, age) {
+    constructor(name: String, age: Int, lesson: Lesson) : this(name, age) {
         this.lesson = lesson
     }
 

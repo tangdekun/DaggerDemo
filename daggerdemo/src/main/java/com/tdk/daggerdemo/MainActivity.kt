@@ -16,15 +16,15 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var student: Student
 
-    @Inject
-    lateinit var lessonInterface: LessonInterface
+//    @Inject
+//    lateinit var lessonInterface: LessonInterface
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         DaggerMainComponent.builder()
-                .mainModule(MainModule(this))
+                .mainModule(MainModule())
                 .build()
                 .inject(this)
         student1.name = "唐德坤"
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 //        student1.lesson?.name = "英语"
 //        student1.lesson?.score = 100
-        daggerdemo_tv.text = student1.toString() + "\n" + student1.lesson.toString() + "\n" + lessonInterface.getClassName() + "\n" + student.lesson.getClassName()
-        LogUtils.dTag("MainActivity", student1.toString(), lessonInterface.getClassName(), student.lesson.getClassName())
+        daggerdemo_tv.text = student1.toString() + "\n" + student1.lesson.toString() + "\n" + student.lesson.toString()
+        LogUtils.dTag("MainActivity", student1.toString(), student.lesson.toString())
     }
 }

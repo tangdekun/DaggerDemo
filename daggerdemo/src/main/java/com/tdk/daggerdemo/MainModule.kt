@@ -8,37 +8,33 @@ import dagger.Provides
  * @Date 2018/7/30-10:45
  * @Email tangdekun0924@gmail.com
  */
-@Module
-class MainModule(val mainActivity: MainActivity) {
+@Module()
+class MainModule {
 
-    //    @Named("tangdekun")
     @Provides
-    fun provideStudent(lessonInterface: LessonInterface): Student {
-        return Student("tangdekun", 26, lessonInterface)
+    fun provideStudent(lesson: Lesson): Student {
+        return Student("tangdekun", 26, lesson)
     }
 
 
-    @Provides
-    fun provideLesson(lesson: Lesson): LessonInterface {
-        return lesson
-    }
-
-    @Provides
-    fun provideLessonHelper(): LessonHelper {
-        return object : LessonHelper {
-
-            override fun getInterfaceName(): String {
-                return "LessonHelper"
-
-            }
-
-
-        }
-    }
-//    @Named("tdk")
 //    @Provides
-//    fun providerStudent():Student{
-//        return Student("tdk",26)
+//    fun provideLesson(): Lesson {
+//        return Lesson("数学", 96)
 //    }
+
+    @Provides
+    fun provideLesson2(name: String, score: Int): Lesson {
+        return Lesson(name, score)
+    }
+
+    @Provides
+    fun provideName(): String {
+        return "语文"
+    }
+
+    @Provides
+    fun provideScore(): Int {
+        return 90
+    }
 
 }
