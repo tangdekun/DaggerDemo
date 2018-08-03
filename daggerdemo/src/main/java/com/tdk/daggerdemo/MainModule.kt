@@ -2,6 +2,7 @@ package com.tdk.daggerdemo
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 /**
  * @Author tangdekun
@@ -21,7 +22,7 @@ class MainModule {
 //    fun provideLesson(): Lesson {
 //        return Lesson("数学", 96)
 //    }
-
+    @Named
     @Provides
     fun provideLesson2(name: String, score: Int): Lesson {
         return Lesson(name, score)

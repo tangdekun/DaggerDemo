@@ -7,6 +7,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.tdk.daggerdemo.R.id.daggerdemo_tv
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +16,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var student1: Student1
     @Inject
     lateinit var student: Student
+
+    @Named("math")
+    @Inject
+    lateinit var lessonMath: Lesson
+
+    @Named("chinese")
+    @Inject
+    lateinit var lessonChinese: Lesson
+
 
 //    @Inject
 //    lateinit var lessonInterface: LessonInterface
