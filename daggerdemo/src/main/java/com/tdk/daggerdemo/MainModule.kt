@@ -13,14 +13,27 @@ class MainModule(val mainActivity: MainActivity) {
 
     //    @Named("tangdekun")
     @Provides
-    fun provideStudent(): Student {
-        return Student("tangdekun", 26, provideLesson())
+    fun provideStudent(lessonInterface: LessonInterface): Student {
+        return Student("tangdekun", 26, lessonInterface)
     }
 
 
     @Provides
-    fun provideLesson(): Lesson {
-        return Lesson("语文", 98)
+    fun provideLesson(lesson: Lesson): LessonInterface {
+        return lesson
+    }
+
+    @Provides
+    fun provideLessonHelper(): LessonHelper {
+        return object : LessonHelper {
+
+            override fun getInterfaceName(): String {
+                return "LessonHelper"
+
+            }
+
+
+        }
     }
 //    @Named("tdk")
 //    @Provides

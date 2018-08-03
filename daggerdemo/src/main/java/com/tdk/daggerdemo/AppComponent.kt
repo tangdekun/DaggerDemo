@@ -2,6 +2,7 @@ package com.tdk.daggerdemo
 
 import android.content.Context
 import android.content.SharedPreferences
+import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
@@ -19,4 +20,15 @@ interface AppComponent {
     fun myApplication(): Context
 
     fun inject(application: MyApplication)
+//
+//    @Component.Builder
+//    interface Builder {
+//
+//        @BindsInstance
+//        fun application(application: MyApplication): Builder
+//
+//        fun
+//        fun build(): AppComponent
+//    }
+
 }

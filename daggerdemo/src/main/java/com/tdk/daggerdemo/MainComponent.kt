@@ -9,7 +9,7 @@ import dagger.Component
  */
 //@Component(modules = [(MainModule::class)], dependencies = [AppComponent::class])
 //@CustomScopeName
-@Component
+@Component(modules = [(MainModule::class)])
 interface MainComponent {
     fun inject(mainActivity: MainActivity)
 }

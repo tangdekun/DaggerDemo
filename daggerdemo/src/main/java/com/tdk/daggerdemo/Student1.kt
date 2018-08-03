@@ -8,7 +8,7 @@ import javax.inject.Inject
  * @Email tangdekun0924@gmail.com
  */
 
-class Student1 @Inject constructor() {
+class Student1 constructor() {
 
 
     var name: String? = null
@@ -19,6 +19,7 @@ class Student1 @Inject constructor() {
 
     var lesson: Lesson? = null
 
+    @Inject
     constructor(lesson: Lesson) : this() {
         this.lesson = lesson
     }

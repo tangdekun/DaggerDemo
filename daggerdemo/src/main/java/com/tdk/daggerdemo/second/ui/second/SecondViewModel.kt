@@ -2,7 +2,6 @@ package com.tdk.daggerdemo.second.ui.second
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.tdk.daggerdemo.AppComponentHolder
 import com.tdk.daggerdemo.second.ui.DaggerSecondFragmentComponent
@@ -11,7 +10,7 @@ import javax.inject.Inject
 class SecondViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 
-    val name = ObservableField<String>()
+//    val name = ObservableField<String>()
 
     @Inject
     lateinit var context: Context

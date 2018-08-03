@@ -2,7 +2,6 @@ package com.tdk.daggerdemo
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.hp.baseres.UtilsApplication
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,6 +13,7 @@ import javax.inject.Singleton
  */
 @Module
 class AppModule(private val application: MyApplication) {
+
 
     @Singleton
     @Provides
