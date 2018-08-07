@@ -16,7 +16,6 @@ class Student1 constructor() {
 
     var age: Int = 0
 
-
     var lesson: Lesson? = null
 
     @Inject

@@ -7,7 +7,6 @@ import com.blankj.utilcode.util.LogUtils
 import com.tdk.daggerdemo.R.id.daggerdemo_tv
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
-import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,14 +16,16 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var student: Student
 
-    @Named("math")
-    @Inject
-    lateinit var lessonMath: Lesson
-
-    @Named("chinese")
-    @Inject
-    lateinit var lessonChinese: Lesson
-
+    //    @Named("math")
+//    @Inject
+//    lateinit var lessonMath: Lesson
+//
+//    @Inject
+//    @Named("english")
+//    lateinit var englishLesson: Lesson
+//    @Inject
+//    @English
+//    var englishProject: Project? = null
 
 //    @Inject
 //    lateinit var lessonInterface: LessonInterface
@@ -44,5 +45,7 @@ class MainActivity : AppCompatActivity() {
 //        student1.lesson?.score = 100
         daggerdemo_tv.text = student1.toString() + "\n" + student1.lesson.toString() + "\n" + student.lesson.toString()
         LogUtils.dTag("MainActivity", student1.toString(), student.lesson.toString())
+//        LogUtils.dTag("MainActivity", englishProject.toString())
+//        LogUtils.dTag("MainActivity", lessonMath.toString())
     }
 }

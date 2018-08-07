@@ -1,20 +1,17 @@
 package com.tdk.daggerdemo
 
-import javax.inject.Inject
-
 /**
  * @Author tangdekun
  * @Date 2018/8/1-13:41
  * @Email tangdekun0924@gmail.com
  */
-class Lesson constructor() {
+class Lesson {
 
     var name: String? = null
 
     var score: Int = 0
 
-    @Inject
-    constructor(name: String, score: Int) : this() {
+    constructor(name: String, score: Int) {
         this.name = name
         this.score = score
     }

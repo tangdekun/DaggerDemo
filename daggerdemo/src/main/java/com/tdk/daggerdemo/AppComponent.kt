@@ -15,20 +15,19 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
 
-    fun sharedPreferences(): SharedPreferences
-
-    fun myApplication(): Context
 
     fun inject(application: MyApplication)
-//
-//    @Component.Builder
-//    interface Builder {
-//
-//        @BindsInstance
-//        fun application(application: MyApplication): Builder
-//
-//        fun
-//        fun build(): AppComponent
-//    }
+
+    @Component.Builder
+    interface Builder {
+
+        @BindsInstance
+        fun application(application: MyApplication): Builder
+
+        @BindsInstance
+        fun app(appModule: AppModule): Builder
+
+        fun build(): AppComponent
+    }
 
 }
